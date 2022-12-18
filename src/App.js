@@ -4,16 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Nav } from 'react-bootstrap'
 import Container from 'react-bootstrap/Container';
 //Import React component
-import React, { Component } from 'react';
-// Importing Routing
+import React from 'react';
+//Importing Routing
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-//Importing react icons 
-import { FaHome,FaPlusCircle } from "react-icons/fa";
+//Importing font awesome icons 
+import { FaHome,FaPlusCircle,FaUndo } from "react-icons/fa";
 //Importing Components
 import { AddMovie } from './components/addMovie';
 import { ViewMovie } from './components/viewMovie';
 import { UpdateMovie } from './components/updateMovie';
-
 
 class App extends React.Component {
   render() {
@@ -27,7 +26,7 @@ class App extends React.Component {
               <Nav className="me-auto">
                 <Nav.Link href="/viewMovie"> <FaHome/> Home</Nav.Link>
                 <Nav.Link href="/addMovie"> <FaPlusCircle/> Add Movie</Nav.Link>
-                <Nav.Link href="/updateMovie"> <FaPlusCircle/> Update Movie</Nav.Link>
+                <Nav.Link href="/updateMovie"> <FaUndo/> Update Movie</Nav.Link>
               </Nav>
             </Container>
           </Navbar>
