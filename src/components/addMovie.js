@@ -14,16 +14,26 @@ export class AddMovie extends React.Component {
         this.onChangeDescription = this.onChangeDescription.bind(this);
         this.onChangeRuntime = this.onChangeRuntime.bind(this);
         this.onChangeCast = this.onChangeCast.bind(this);
-
         this.handleSubmit = this.handleSubmit.bind(this);
 
         this.state = {
             title: '',
-            cover:'',
+            cover: '',
             description: '',
             runtime: '',
             cast: ''
         }
+    }
+
+    getBase64(file, cb) {
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            cb(reader.result)
+        };
+        reader.onerror = (error) => {
+            console.log('Error: ', error);
+        };
     }
 
     //When submit button is pressed
@@ -50,7 +60,7 @@ export class AddMovie extends React.Component {
 
         this.setState({
             title: '',
-            cover:'',
+            cover: '',
             description: '',
             runtime: '',
             cast: ''
@@ -66,6 +76,12 @@ export class AddMovie extends React.Component {
     }
 
     onChangeCover(e) {
+        // let files = e.target.files;
+        // this.getBase64(files[0], (result) => {
+        //         this.state.cover = result;
+        // })
+
+        //For String only
         this.setState({
             cover: e.target.value
         })
@@ -91,9 +107,9 @@ export class AddMovie extends React.Component {
 
     render() {
         return (
-            <div className="App" style={{display: 'flex',  justifyContent:'center', alignItems:'center', margin:'20px'}}>
+            <div className="App" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px' }}>
                 {/*React Card*/}
-                <Card style={{ width: '99%',  backgroundColor:'#6F7378' }} >
+                <Card style={{ width: '99%', backgroundColor: '#6F7378' }} >
                     <Card.Body>
                         <Card.Title>Add your movie here</Card.Title>
                         <Card.Text>
@@ -104,27 +120,28 @@ export class AddMovie extends React.Component {
 
                             <div className="form-group">
                                 <label>Add Movie Title: </label>
-                                <input type="text" className="form-control" value={this.state.title} onChange={this.onChangeTitle} />
-                            </div>
-                            <br></br>
-                            <div className="form-group">
-                                <label>Add Movie Cover: </label>
-                                <input type="text" className="form-control" value={this.state.cover} onChange={this.onChangeCover} />
+                                <input type="text" className="form-control" value={this.state.title} onChange={this.onChangeTitle} required />
                             </div>
                             <br></br>
                             <div className="form-group">
                                 <label>Add Description: </label>
-                                <input type="text" className="form-control" value={this.state.description} onChange={this.onChangeDescription} />
+                                <input type="text" className="form-control" value={this.state.description} onChange={this.onChangeDescription} required />
                             </div>
                             <br></br>
                             <div className="form-group">
                                 <label>Add Movie Runtime: </label>
-                                <input type="text" className="form-control" value={this.state.runtime} onChange={this.onChangeRuntime} />
+                                <input type="text" className="form-control" value={this.state.runtime} onChange={this.onChangeRuntime} required />
                             </div>
                             <br></br>
                             <div className="form-group">
                                 <label>Add Movie Cast: </label>
-                                <input type="text" className="form-control" value={this.state.cast} onChange={this.onChangeCast} />
+                                <input type="text" className="form-control" value={this.state.cast} onChange={this.onChangeCast} required />
+                            </div>
+                            <br></br>
+                            <div className="form-group">
+                                <label>Add Movie Cover: </label>
+                                <input type="text" className="form-control" value={this.state.cover} onChange={this.onChangeCover} required/>
+                                {/*accept="image/png, image/jpeg" */}
                             </div>
                             <br></br>
                             <Button variant="danger" type="submit" value="Submit">Add Movie</Button>

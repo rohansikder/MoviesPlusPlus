@@ -61,6 +61,15 @@ app.get('/api/movies', (req, res) => {
     })
 })
 
+//Delete request comes in from /api/movies/:id and then movieModel finds it and deletes it
+app.delete('/api/movies/:id', (req,res) => {
+    console.log('Deleting: ' + req.params.id); 
+    //The findByIdAndDelete() function is used to find a matching document, removes it, and passing the found document
+    movieModel.findByIdAndDelete({_id:req.params.id}, (error,data)=>{ 
+        res.send(data);
+    }) 
+})
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })

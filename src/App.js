@@ -13,6 +13,7 @@ import { FaHome,FaPlusCircle,FaUndo } from "react-icons/fa";
 import { AddMovie } from './components/addMovie';
 import { ViewMovie } from './components/viewMovie';
 import { UpdateMovie } from './components/updateMovie';
+import { ReadMovie } from './components/readMovie';
 
 class App extends React.Component {
   render() {
@@ -33,8 +34,8 @@ class App extends React.Component {
 
           {/*Routes to component using path and href*/}
           <Routes>
-            <Route path="/" element={<ViewMovie />} />
-            <Route path="/viewMovie" element={<ViewMovie />} />
+            <Route path="/" element={<ReadMovie />} />
+            <Route path="/viewMovie" element={<ReadMovie />} />
             <Route path="/addMovie" element={<AddMovie />} />
             <Route path="/updateMovie" element={<UpdateMovie />} />
           </Routes>
