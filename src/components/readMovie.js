@@ -4,13 +4,14 @@ import axios from "axios";
 
 export class ReadMovie extends React.Component {
 
-    constructor(){
+    constructor() {
         super();
-        //Binds reload reload method
+        //Binds reload method
         this.Reload = this.Reload.bind(this);
     }
 
     Reload() {
+        //Called immediately after a component is mounted. Setting state here will trigger re-rendering.
         this.componentDidMount();
     }
 
@@ -20,7 +21,7 @@ export class ReadMovie extends React.Component {
         axios.get("http://localhost:4000/api/movies")
             .then((response) => {
                 //Sends data to Movies
-                this.setState({movies:response.data})
+                this.setState({ movies: response.data })
             })
             .catch(function (error) {
                 console.log(error);

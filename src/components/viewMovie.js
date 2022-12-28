@@ -1,9 +1,12 @@
 import React from "react";
+//Importing Axios
 import axios from "axios";
+//Importing Card and Button bootstrap
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 //Importing font awesome icons 
-import { FaTrash } from "react-icons/fa";
+import { FaTrash, FaUndo } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 export class ViewMovie extends React.Component {
@@ -22,15 +25,19 @@ export class ViewMovie extends React.Component {
             .catch();
     }
 
+    //Displays the movies in a card format
     render() {
         return (
             <div className="App" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '20px' }}>
+                {/*Displays Info in a card Format */}
                 <Card style={{ width: '80%', backgroundColor: '#6F7378' }} >
                     {/* <Card.Img variant="top" src={this.props.movies.cover} /> */}
                     <Card.Body>
                         <div style={{ display: "flex" }} >
+                            {/* Buttons to delete and Update movies /> */}
+                            <Link to={'/updateMovie/' + this.props.movies._id} style={{ marginRight: "auto" }} className="btn btn-danger"><FaUndo /></Link>
                             <Button variant="danger" style={{ marginLeft: "auto" }} onClick={this.DeleteMovie}>
-                                <FaTrash/>
+                                <FaTrash />
                             </Button>
                         </div>
                         <Card.Title>{this.props.movies.title}</Card.Title>

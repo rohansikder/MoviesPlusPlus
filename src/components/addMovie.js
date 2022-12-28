@@ -140,7 +140,7 @@ export class AddMovie extends React.Component {
                             <br></br>
                             <div className="form-group">
                                 <label>Add Movie Cover: </label>
-                                <input type="text" className="form-control" value={this.state.cover} onChange={this.onChangeCover} required/>
+                                <input type="text" className="form-control" value={this.state.cover} onChange={this.onChangeCover} required />
                                 {/*accept="image/png, image/jpeg" */}
                             </div>
                             <br></br>
