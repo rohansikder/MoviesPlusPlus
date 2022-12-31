@@ -1,3 +1,4 @@
+//Rohan Sikder - G00389052
 const express = require('express') //Import Express
 const app = express()
 const bodyParser = require('body-parser') //Import Body Parser
@@ -90,5 +91,5 @@ app.delete('/api/movies/:id', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`Movie app listening on port ${port}`)
 })

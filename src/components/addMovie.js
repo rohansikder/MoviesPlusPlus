@@ -1,3 +1,4 @@
+//Rohan Sikder - G00389052
 import React from "react";
 import axios from "axios";
 
@@ -115,7 +116,7 @@ export class AddMovie extends React.Component {
                         <Card.Text>
                             Please enter title, Cover Image, description and runtime below:
                         </Card.Text>
-                        {/*React Forms*/}
+                        {/*React Forms- Add movie*/}
                         <form onSubmit={this.handleSubmit}>
 
                             <div className="form-group">

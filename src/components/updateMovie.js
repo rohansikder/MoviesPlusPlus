@@ -1,3 +1,4 @@
+//Rohan Sikder - G00389052
 import React from "react";
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -66,35 +67,35 @@ export function UpdateMovie(props) {
                     <Card.Text>
                         Please enter new title, Cover Image, description and runtime below:
                     </Card.Text>
-                    {/*React Forms*/}
+                    {/*React Forms - Update Movie*/}
                     <form onSubmit={handleSubmit}>
 
                         <div className="form-group">
-                            <label>Add Movie Title: </label>
+                            <label>Update Movie Title: </label>
                             <input type="text" className="form-control" value={title}
                                 onChange={(e) => setTitle(e.target.value)} required />
                         </div>
                         <br></br>
                         <div className="form-group">
-                            <label>Add Description: </label>
+                            <label>Update Description: </label>
                             <input type="text" className="form-control" value={description}
                                 onChange={(e) => setDescription(e.target.value)} required />
                         </div>
                         <br></br>
                         <div className="form-group">
-                            <label>Add Movie Runtime: </label>
+                            <label>Update Movie Runtime: </label>
                             <input type="text" className="form-control" value={runtime}
                                 onChange={(e) => setRuntime(e.target.value)} required />
                         </div>
                         <br></br>
                         <div className="form-group">
-                            <label>Add Movie Cast: </label>
+                            <label>Update Movie Cast: </label>
                             <input type="text" className="form-control" value={cast}
                                 onChange={(e) => setCast(e.target.value)} required />
                         </div>
                         <br></br>
                         <div className="form-group">
-                            <label>Add Movie Cover: </label>
+                            <label>Update Movie Cover: </label>
                             <input type="text" className="form-control" value={cover}
                                 onChange={(e) => setCover(e.target.value)} required />
                             {/*accept="image/png, image/jpeg" */}

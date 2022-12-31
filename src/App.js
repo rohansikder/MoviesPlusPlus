@@ -30,10 +30,10 @@ class App extends React.Component {
                 {/* <Nav.Link href="/updateMovie"> <FaUndo /> Update Movie</Nav.Link> */}
               </Nav>
               <div style={{ display: "flex" }} >
-                  <h2 style={{ marginLeft: "auto" }}>
-                    <FaRegUserCircle/>
-                  </h2>
-                </div>
+                <h2 style={{ marginLeft: "auto" }}>
+                  <FaRegUserCircle />
+                </h2>
+              </div>
             </Container>
           </Navbar>
 

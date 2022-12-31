@@ -1,3 +1,4 @@
+//Rohan Sikder - G00389052
 import React from "react";
 import { Movies } from "./movies";
 import axios from "axios";
@@ -28,7 +29,7 @@ export class ReadMovie extends React.Component {
             });
     }
 
-    //State array which stores all books
+    //State array which stores all movies
     state = {
         movies: []
     }
