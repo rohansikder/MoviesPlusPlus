@@ -1,6 +1,8 @@
 # Data Representation Querying Project
 CRUD App developed using the MERN technology stack using react.
 
+Feel free to check out the App wiki: https://github.com/rohansikder/MoviesPlusPlus/wiki
+
 ## Installation
 ```bash
 npm install
